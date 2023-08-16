@@ -23,6 +23,11 @@ kotlin {
             isStatic = true
         }
         extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
+
+        pod("FirebaseAnalytics") {
+            version = "~> 10.13"
+        }
+
     }
 
     sourceSets {
@@ -72,5 +77,9 @@ android {
     }
     kotlin {
         jvmToolchain(11)
+    }
+
+    dependencies {
+        implementation("androidx.compose.ui:ui-tooling-preview")
     }
 }
